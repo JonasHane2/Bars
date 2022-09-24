@@ -27,7 +27,6 @@ def pearson_autocorrelation_test(data, print_txt=False):
 
 
 if __name__ == '__main__':
-
     directory = os.path.dirname(os.path.realpath(__file__)) + '/plots/'
     if not os.path.exists(directory):
         os.makedirs(directory)
@@ -75,4 +74,4 @@ if __name__ == '__main__':
         res.append(temp)
 
     fig = px.imshow(np.array(res).T, labels=labels, x=x, y=y, text_auto=True, color_continuous_scale='RdBu_r') 
-    fig.show()
+    fig.write_image(directory+'pearson_corr.png')

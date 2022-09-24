@@ -167,7 +167,6 @@ def figures_to_html(figs, filename="dashboard.html"):
 
 
 if __name__ == '__main__':
-
     directory = os.path.dirname(os.path.realpath(__file__)) + '/plots/'
     if not os.path.exists(directory):
         os.makedirs(directory)
@@ -245,10 +244,8 @@ if __name__ == '__main__':
         figures_to_html(figs_qq, directory+'qq_plots_'+tp+'_'+i+'.html')
         figures_to_html(figs_dist, directory+'dist_histograms_'+tp+'_'+i+'.html')
 
-
+    
     fig_sw = px.imshow(np.array(shapiro_wilk_res).T, labels=dict(x="Time interval", y="Bar-type", color="Shapiro-Wilk\np-value"), x=x, y=y, text_auto=True, color_continuous_scale='RdBu_r') 
-    fig_sw.show()    
-    
+    fig_sw.write_image(directory+'sw_test.png')
     fig_dk2 = px.imshow(np.array(dagostino_k2_res).T, labels=dict(x="Time interval", y="Bar-type", color="D'Agostino's K^2\np-value"), x=x, y=y, text_auto=True, color_continuous_scale='RdBu_r') 
-    fig_dk2.show()
-    
+    fig_dk2.write_image(directory+'dk2_test.png')
