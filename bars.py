@@ -201,6 +201,15 @@ class Imbalance_Bars(Bars):
             self.Ts.append(tick_length) 
             self.threshold = self.get_new_threshold()
             self.theta = 0 
+
+            #TODO Try this:
+            """
+            avg_sample_freq = np.average(self.Ts[:-20]) #last 20, but try others
+            ideal_freq = 100 #set this as a global val
+            diff = avg_sample_freq/ideal_freq #know that avg > 0 
+            self.threshold = self.threshold/diff 
+            """
+
             return True 
         
         return False 
