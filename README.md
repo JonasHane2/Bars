@@ -52,6 +52,7 @@ data = ...
 
 # Get indices when the threshold is breached
 bar_ids = tick_bars.get_all_bar_ids(data)
+```
 
 ## Testing
 
