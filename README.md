@@ -52,3 +52,14 @@ data = ...
 
 # Get indices when the threshold is breached
 bar_ids = tick_bars.get_all_bar_ids(data)
+
+## Testing
+
+To ensure the correctness of the implemented Bars and Imbalance Bars sampling scheme, a set of unit tests is provided. These tests cover various aspects of the `Bars` class functionality.
+
+### Running Tests
+
+To run the tests, execute the following command in your terminal:
+
+```bash
+python test.py

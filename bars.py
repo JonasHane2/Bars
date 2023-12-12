@@ -71,7 +71,7 @@ class Bars():
             (float): the threshold to achieve the desired bar sampling frequency. 
         """
         if len(trades) == 0:
-            return 1
+            return 0
         
         series = self.get_inc(trades)
         result = minimize_scalar(lambda threshold: abs(calculate_avg_threshold_breaches_per_day(threshold, series) - self.avg_bars_per_day),
