@@ -169,7 +169,7 @@ def calculate_avg_threshold_breaches_per_day(threshold: float, series: pd.Series
                  from 'series' if the threshold was set to 'threshold' 
     """
     threshold_breaches, theta_sum = 0, 0
-    unique_days = series.index.nunique()
+    unique_days = max(1, (series.index.max() - series.index.min()).days)
     
     for value in series:
         theta_sum+=value
